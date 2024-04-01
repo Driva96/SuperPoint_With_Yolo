@@ -115,6 +115,18 @@ for frame_file in frame_files:
 
 
     # Only proceed if no objects were detected by YOLO in the current frame
+
+    '''
+    TODO
+    
+    Implement a system that, when the tracked points are detected within a bounding box after x time, the object
+    within the bbox will be assigned the label that the points detected within the box already have
+    
+    EX:
+    Plane 1 is lost, redetected later as plane 3, plane 1 points are still attached, so plane 3 is renamed plane 1
+
+    '''
+
     for cls_id, detected in detection_status.items():
         if not detected:
             # Detect current keypoints and descriptors
